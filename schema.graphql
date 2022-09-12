@@ -1,0 +1,11 @@
+type Wallet @entity {
+  id: String!
+  tokens: [NFT!]! @derivedFrom(field: "owner")
+}
+
+type NFT @entity {
+  id: String!
+  tokenId: String!
+  contractAddress: String!
+  owner: Wallet!
+}
